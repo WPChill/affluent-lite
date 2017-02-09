@@ -1,5 +1,37 @@
 <?php
 
+add_action( 'customize_register', 'a_customize_register' );
+
+function a_customize_register($wp_customize){
+
+	require_once get_template_directory() . '/core/welcome-screen/custom-recommend-action-section.php';
+		$wp_customize->register_section_type( 'Affluent_Customize_Section_Recommend' );
+
+		// Recomended Actions
+		$wp_customize->add_section(
+			new Affluent_Customize_Section_Recommend(
+				$wp_customize,
+				'affluent_recomended-section',
+				array(
+					'title'    => esc_html__( 'Recomended Actions', 'affluent' ),
+					'succes_text'	=> esc_html__( 'Follow us on :', 'affluent' ),
+					'facebook' => 'https://www.facebook.com/colorlib',
+					'twitter' => 'https://twitter.com/colorlib',
+					'wp_review' => true,
+					'priority' => 0
+				)
+			)
+		);
+
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'affluent_welcome_scripts_for_customizer', 0 );
+
+function affluent_welcome_scripts_for_customizer(){
+	wp_enqueue_style( 'cpotheme-welcome-screen-customizer-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome_customizer.css' );
+	wp_enqueue_script( 'cpotheme-welcome-screen-customizer-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome_customizer.js', array( 'customize-controls' ), '1.0', true );
+}
+
 // Load the system checks ( used for notifications )
 require get_template_directory() . '/core/welcome-screen/notify-system-checks.php';
 
