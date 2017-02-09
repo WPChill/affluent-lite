@@ -86,7 +86,11 @@ class Affluent_Customize_Section_Recommend extends WP_Customize_Section {
 		$json = parent::json();
 		global $affluent_required_actions;
 		$formatted_array = array();
+		$affluent_show_required_actions = get_option( "affluent_show_required_actions" );
 		foreach ( $affluent_required_actions as $key => $affluent_required_action ) {
+			if ( @$affluent_show_required_actions[ $affluent_required_action['id'] ] === false ) {
+				continue;
+			}
 			if ( $affluent_required_action['check'] ) {
 				continue;
 			}
@@ -159,7 +163,7 @@ class Affluent_Customize_Section_Recommend extends WP_Customize_Section {
 					</span>
 				<# } #>
 			</h3>
-			<div class="recomended-actions_container" id="">
+			<div class="recomended-actions_container" id="plugin-filter">
 				<# if( data.required_actions.length > 0 ){ #>
 					<# for (action in data.required_actions) { #>
 						<div class="epsilon-recommeded-actions-container" data-index="{{ data.required_actions[action].index }}">
