@@ -34,6 +34,12 @@ function affluent_welcome_scripts_for_customizer(){
 	wp_enqueue_script( 'updates' );
 	wp_add_inline_script( 'plugin-install', 'var pagenow = "customizer";' );
 	wp_enqueue_script( 'cpotheme-welcome-screen-customizer-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome_customizer.js', array( 'customize-controls' ), '1.0', true );
+
+	wp_localize_script( 'cpotheme-welcome-screen-customizer-js', 'affluentWelcomeScreenObject', array(
+		'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
+		'template_directory'       => get_template_directory_uri(),
+	) );
+
 }
 
 // Load the system checks ( used for notifications )
@@ -44,7 +50,7 @@ if ( is_admin() ) {
 	global $affluent_required_actions, $affluent_recommended_plugins;
 	$affluent_recommended_plugins = array(
 		'kiwi-social-share' => array( 'recommended' => false ),
-		'cpo-widgets' => array( 'recommended' => false ),
+		'uber-nocaptcha-recaptcha' => array( 'recommended' => false ),
 		'cpo-shortcodes' => array( 'recommended' => false )
 	);
 	/*
@@ -65,6 +71,14 @@ if ( is_admin() ) {
 			"check"       => MT_Notify_System::has_import_plugin( 'cpo-content-types' ),
 			"plugin_slug" => 'cpo-content-types'
 		),
+		array(
+			"id"          => 'affluent-req-ac-install-cpo-widgets',
+			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'affluent' ), __( 'Activate: CPO Widgets', 'affluent' ), 'cpo-content-types' ),
+			"description" => __( 'It is highly recommended that you install the CPO Widgets plugin. It will help you manage all the special widgets that this theme supports.', 'affluent' ),
+			"check"       => MT_Notify_System::has_import_plugin( 'cpo-widgets' ),
+			"plugin_slug" => 'cpo-widgets'
+		),
+		
 		array(
 			"id"          => 'affluent-req-ac-install-wp-import-plugin',
 			"title"       => MT_Notify_System::wordpress_importer_title(),
@@ -93,6 +107,13 @@ if ( is_admin() ) {
 			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'affluent' ) . '</a> 
 							   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'affluent' ) . '</a>',
 			"check" => MT_Notify_System::has_import_plugins(),
+		),
+		array(
+			"id"          => 'affluent-req-ac-static-latest-news',
+			"title"       => esc_html__( 'Set front page to static', 'affluent' ),
+			"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'affluent' ),
+			"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/> <br/><a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'affluent' ) . '</a> <a class="button button-primary" id="set_page_automatic"  href="#">' . __( 'Set automatically', 'affluent' ) . '</a>',
+			"check"       => MT_Notify_System::is_not_static_page()
 		),
 	);
 	require get_template_directory() . '/core/welcome-screen/welcome-screen.php';

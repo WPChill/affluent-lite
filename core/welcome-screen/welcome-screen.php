@@ -18,23 +18,21 @@ class Affluent_Welcome {
 		/* enqueue script and style for welcome screen */
 		add_action( 'admin_enqueue_scripts', array( $this, 'affluent_welcome_style_and_scripts' ) );
 
-		/* enqueue script for customizer */
-		// add_action( 'customize_controls_enqueue_scripts', array( $this, 'affluent_welcome_scripts_for_customizer' ) );
-
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_affluent_dismiss_required_action', array(
 			$this,
 			'affluent_dismiss_required_action_callback'
 		) );
-		add_action( 'wp_ajax_nopriv_affluent_dismiss_required_action', array(
+
+		add_action( 'wp_ajax_affluent_affluent_set_frontpage', array(
 			$this,
-			'affluent_dismiss_required_action_callback'
+			'affluent_set_pages'
 		) );
+
 
 		add_action( 'admin_init', array( $this, 'affluent_activate_plugin' ) );
 		add_action( 'admin_init', array( $this, 'affluent_deactivate_plugin' ) );
 		add_action( 'admin_init', array( $this, 'affluent_set_pages' ) );
-		// add_action( 'customize_register', array( $this, 'customize_register' ) );
 	}
 
 	public function customize_register( $wp_customize ){
@@ -65,8 +63,7 @@ class Affluent_Welcome {
 			/**
 			 * Check action
 			 */
-			if ( ! empty( $_GET['action'] ) && $_GET['action'] === 'set_page_automatic' ) {
-				$active_tab = $_GET['tab'];
+			if ( ! empty( $_GET['action'] ) && $_GET['action'] === 'affluent_set_frontpage' ) {
 				$about      = get_page_by_title( 'Homepage' );
 				update_option( 'page_on_front', $about->ID );
 				update_option( 'show_on_front', 'page' );
@@ -74,8 +71,9 @@ class Affluent_Welcome {
 				// Set the blog page
 				$blog = get_page_by_title( 'Blog' );
 				update_option( 'page_for_posts', $blog->ID );
+				echo 'succes';
+				exit();
 
-				wp_redirect( self_admin_url( 'themes.php?page=cpotheme-welcome&tab=' . $active_tab ) );
 			}
 		}
 	}
@@ -163,32 +161,22 @@ class Affluent_Welcome {
 	 */
 	public function affluent_welcome_style_and_scripts( $hook_suffix ) {
 
+		$screen = get_current_screen();
+
 		wp_enqueue_style( 'cpotheme-welcome-screen-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome.css' );
-		wp_enqueue_script( 'cpotheme-welcome-screen-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome.js', array( 'jquery' ), '1.0', true );
 
-		wp_localize_script( 'cpotheme-welcome-screen-js', 'affluentWelcomeScreenObject', array(
-			'nr_actions_required'      => $this->count_actions(),
-			'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
-			'template_directory'       => get_template_directory_uri(),
-			'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.', 'text-domain' )
-		) );
+		if ( $screen->base != 'customize' ) {
+			wp_enqueue_script( 'cpotheme-welcome-screen-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome.js', array( 'jquery' ), '1.0', true );
 
+			wp_localize_script( 'cpotheme-welcome-screen-js', 'affluentWelcomeScreenObject', array(
+				'nr_actions_required'      => $this->count_actions(),
+				'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
+				'template_directory'       => get_template_directory_uri(),
+				'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.', 'affluent' )
+			) );
+		}
+		
 
-	}
-
-	/**
-	 * Load scripts for customizer page
-	 *
-	 * @since  1.8.2.4
-	 */
-	public function affluent_welcome_scripts_for_customizer() {
-
-		wp_enqueue_style( 'cpotheme-welcome-screen-customizer-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome_customizer.css' );
-		wp_enqueue_style( 'plugin-install' );
-		wp_enqueue_script( 'plugin-install' );
-		wp_enqueue_script( 'updates' );
-		wp_add_inline_script( 'plugin-install', 'var pagenow = "customizer";' );
-		wp_enqueue_script( 'cpotheme-welcome-screen-customizer-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome_customizer.js', array( 'customize-controls' ), '1.0', true );
 
 	}
 
