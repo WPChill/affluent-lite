@@ -186,49 +186,37 @@ class Affluent_Welcome {
 	 * @since 1.8.2.4
 	 */
 	public function affluent_dismiss_required_action_callback() {
-
 		global $affluent_required_actions;
-
-		$affluent_dismiss_id = ( isset( $_GET['dismiss_id'] ) ) ? $_GET['dismiss_id'] : 0;
-
-		echo $affluent_dismiss_id; /* this is needed and it's the id of the dismissable required action */
-
-		if ( ! empty( $affluent_dismiss_id ) ):
-
+		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
+		echo $action_id; /* this is needed and it's the id of the dismissable required action */
+		if ( ! empty( $action_id ) ):
 			/* if the option exists, update the record for the specified id */
 			if ( get_option( 'affluent_show_required_actions' ) ):
-
 				$affluent_show_required_actions = get_option( 'affluent_show_required_actions' );
-
-				$affluent_show_required_actions[ $affluent_dismiss_id ] = false;
-
+				switch ( $_GET['todo'] ) {
+					case 'add';
+						$affluent_show_required_actions[ $action_id ] = true;
+						break;
+					case 'dismiss';
+						$affluent_show_required_actions[ $action_id ] = false;
+						break;
+				}
 				update_option( 'affluent_show_required_actions', $affluent_show_required_actions );
-
 			/* create the new option,with false for the specified id */
 			else:
-
 				$affluent_show_required_actions_new = array();
-
 				if ( ! empty( $affluent_required_actions ) ):
-
 					foreach ( $affluent_required_actions as $affluent_required_action ):
-
-						if ( $affluent_required_action['id'] == $affluent_dismiss_id ):
+						if ( $affluent_required_action['id'] == $action_id ):
 							$affluent_show_required_actions_new[ $affluent_required_action['id'] ] = false;
 						else:
 							$affluent_show_required_actions_new[ $affluent_required_action['id'] ] = true;
 						endif;
-
 					endforeach;
-
 					update_option( 'affluent_show_required_actions', $affluent_show_required_actions_new );
-
 				endif;
-
 			endif;
-
 		endif;
-
 		die(); // this is required to return a proper result
 	}
 
@@ -392,8 +380,6 @@ class Affluent_Welcome {
 				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'affluent' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=support' ); ?>"
 				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'affluent' ); ?></a>
-				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=changelog' ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'changelog' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Changelog', 'affluent' ); ?></a>
 			</h2>
 
 			<?php
@@ -409,9 +395,6 @@ class Affluent_Welcome {
 					break;
 				case 'support':
 					require_once get_template_directory() . '/core/welcome-screen/sections/support.php';
-					break;
-				case 'changelog':
-					require_once get_template_directory() . '/core/welcome-screen/sections/changelog.php';
 					break;
 				default:
 					require_once get_template_directory() . '/core/welcome-screen/sections/getting-started.php';

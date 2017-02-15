@@ -45,7 +45,16 @@
     margin-bottom: 15px;
     position: relative;
 }
-
+.affluent-required-action-button,
+.affluent-dismiss-required-action {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #d54e21;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .about-wrap .affluent-action-required-box h4 {
     display: block;
     margin-top: 0;
@@ -61,16 +70,7 @@
 .epsilon-recommeded-actions {
     position: relative;
 }
-.affluent-dismiss-required-action {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    text-decoration: none;
-    background: #d54e21;
-    color: #FFF;
-    border-radius: 50%;
-    cursor: pointer;
-}
+
 .epsilon-recommeded-actions .affluent-dismiss-required-action {
     top: 0;
     right: 0;

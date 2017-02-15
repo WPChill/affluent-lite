@@ -18,10 +18,11 @@ jQuery(document).ready(function(){
 
 	jQuery(".affluent-dismiss-required-action").click(function () {
 
-        var id = jQuery(this).attr('id');
+        var id = jQuery(this).attr('id'),
+            action = jQuery(this).attr('data-action');
         jQuery.ajax({
             type: "GET",
-            data: {action: 'affluent_dismiss_required_action', dismiss_id: id},
+            data: { action: 'affluent_dismiss_required_action', id: id, todo: action },
             dataType: "html",
             url: affluentWelcomeScreenObject.ajaxurl,
             beforeSend: function (data, settings) {

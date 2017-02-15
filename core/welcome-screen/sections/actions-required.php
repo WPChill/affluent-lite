@@ -15,16 +15,22 @@ wp_enqueue_script( 'updates' );
 		/* affluent_show_required_actions is an array of true/false for each required action that was dismissed */
 		$affluent_show_required_actions = get_option( "affluent_show_required_actions" );
 		foreach ( $affluent_required_actions as $affluent_required_action_key => $affluent_required_action_value ):
+			$hidden = false;
 			if ( @$affluent_show_required_actions[ $affluent_required_action_value['id'] ] === false ) {
-				continue;
+				$hidden = true;
 			}
 			if ( @$affluent_required_action_value['check'] ) {
 				continue;
 			}
 			?>
 			<div class="affluent-action-required-box">
-				<span class="dashicons dashicons-no-alt affluent-dismiss-required-action"
-				      id="<?php echo $affluent_required_action_value['id']; ?>"></span>
+				<?php if ( ! $hidden ): ?>
+					<span data-action="dismiss" class="dashicons dashicons-visibility affluent-required-action-button"
+					      id="<?php echo esc_attr( $affluent_required_action_value['id'] ); ?>"></span>
+				<?php else: ?>
+					<span data-action="add" class="dashicons dashicons-hidden affluent-required-action-button"
+					      id="<?php echo esc_attr( $affluent_required_action_value['id'] ); ?>"></span>
+				<?php endif; ?>
 				<h3><?php if ( ! empty( $affluent_required_action_value['title'] ) ): echo $affluent_required_action_value['title']; endif; ?></h3>
 				<p>
 					<?php if ( ! empty( $affluent_required_action_value['description'] ) ): echo $affluent_required_action_value['description']; endif; ?>

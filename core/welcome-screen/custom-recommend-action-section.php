@@ -170,7 +170,7 @@ class Affluent_Customize_Section_Recommend extends WP_Customize_Section {
 							<# if( !data.required_actions[action].check ){ #>
 								<div class="epsilon-recommeded-actions">
 									<p class="title">{{ data.required_actions[action].title }}</p>
-									<span class="dashicons dashicons-no-alt affluent-dismiss-required-action" id="{{ data.required_actions[action].id }}"></span>
+									<span data-action="dismiss" class="dashicons dashicons-visibility affluent-dismiss-required-action" id="{{ data.required_actions[action].id }}"></span>
 									<div class="description">{{{ data.required_actions[action].description }}}</div>
 									<# if( data.required_actions[action].plugin_slug ){ #>
 										<div class="custom-action">
