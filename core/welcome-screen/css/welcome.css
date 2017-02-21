@@ -46,6 +46,7 @@
     position: relative;
 }
 .affluent-required-action-button,
+.affluent-recommended-plugin-button,
 .affluent-dismiss-required-action {
     position: absolute;
     top: 10px;
@@ -71,7 +72,8 @@
     position: relative;
 }
 
-.epsilon-recommeded-actions .affluent-dismiss-required-action {
+.epsilon-recommeded-actions .affluent-dismiss-required-action,
+.epsilon-recommeded-actions .affluent-recommended-plugin-button {
     top: 0;
     right: 0;
 }

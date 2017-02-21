@@ -24,6 +24,11 @@ class Affluent_Welcome {
 			'affluent_dismiss_required_action_callback'
 		) );
 
+		add_action( 'wp_ajax_affluent_dismiss_recommended_plugins', array(
+			$this,
+			'affluent_dismiss_recommended_plugins_callback'
+		) );
+
 		add_action( 'wp_ajax_affluent_affluent_set_frontpage', array(
 			$this,
 			'affluent_set_pages'
@@ -33,29 +38,6 @@ class Affluent_Welcome {
 		add_action( 'admin_init', array( $this, 'affluent_activate_plugin' ) );
 		add_action( 'admin_init', array( $this, 'affluent_deactivate_plugin' ) );
 		add_action( 'admin_init', array( $this, 'affluent_set_pages' ) );
-	}
-
-	public function customize_register( $wp_customize ){
-
-		require_once get_template_directory() . '/core/welcome-screen/custom-recommend-action-section.php';
-		$wp_customize->register_section_type( 'Affluent_Customize_Section_Recommend' );
-
-		// Recomended Actions
-		$wp_customize->add_section(
-			new Affluent_Customize_Section_Recommend(
-				$wp_customize,
-				'affluent_recomended-section',
-				array(
-					'title'    => esc_html__( 'Recomended Actions', 'affluent' ),
-					'succes_text'	=> esc_html__( 'Follow us on :', 'affluent' ),
-					'facebook' => 'https://www.facebook.com/colorlib',
-					'twitter' => 'https://twitter.com/colorlib',
-					'wp_review' => true,
-					'priority' => 0
-				)
-			)
-		);
-
 	}
 
 	public function affluent_set_pages() {
@@ -216,6 +198,27 @@ class Affluent_Welcome {
 					update_option( 'affluent_show_required_actions', $affluent_show_required_actions_new );
 				endif;
 			endif;
+		endif;
+		die(); // this is required to return a proper result
+	}
+
+	public function affluent_dismiss_recommended_plugins_callback() {
+		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
+		echo $action_id; /* this is needed and it's the id of the dismissable required action */
+		if ( ! empty( $action_id ) ):
+			/* if the option exists, update the record for the specified id */
+			$affluent_show_recommended_plugins = get_option( 'affluent_show_recommended_plugins' );
+				
+				switch ( $_GET['todo'] ) {
+					case 'add';
+						$affluent_show_recommended_plugins[ $action_id ] = false;
+						break;
+					case 'dismiss';
+						$affluent_show_recommended_plugins[ $action_id ] = true;
+						break;
+				}
+				update_option( 'affluent_show_recommended_plugins', $affluent_show_recommended_plugins );
+			/* create the new option,with false for the specified id */
 		endif;
 		die(); // this is required to return a proper result
 	}

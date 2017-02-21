@@ -14,8 +14,9 @@ function a_customize_register($wp_customize){
 				'affluent_recomended-section',
 				array(
 					'title'    => esc_html__( 'Recomended Actions', 'affluent' ),
-					'succes_text'	=> __( "We're social :", 'affluent' ),
-					'facebook' => 'https://www.facebook.com/cpothemes/',
+					'social_text'	=> esc_html__( 'We are social :', 'affluent' ),
+					'plugin_text'	=> esc_html__( 'Recomended Plugins :', 'affluent' ),
+					'facebook' => 'https://www.facebook.com/cpothemes',
 					'twitter' => 'https://twitter.com/cpothemes',
 					'wp_review' => true,
 					'priority' => 0
@@ -49,9 +50,12 @@ require get_template_directory() . '/core/welcome-screen/notify-system-checks.ph
 if ( is_admin() ) {
 	global $affluent_required_actions, $affluent_recommended_plugins;
 	$affluent_recommended_plugins = array(
-		'kiwi-social-share' => array( 'recommended' => false ),
-		'uber-nocaptcha-recaptcha' => array( 'recommended' => false ),
-		'cpo-shortcodes' => array( 'recommended' => false )
+		'kiwi-social-share' 		=> array( 'recommended' => true ),
+		'uber-nocaptcha-recaptcha'	=> array( 'recommended' => false ),
+		'cpo-shortcodes' 			=> array( 'recommended' => false ),
+		'wp-product-review'       	=> array( 'recommended' => false ),
+		'pirate-forms'           	=> array( 'recommended' => true ),
+		'visualizer'             	=> array( 'recommended' => false )
 	);
 	/*
 	 * id - unique id; required
@@ -78,7 +82,6 @@ if ( is_admin() ) {
 			"check"       => MT_Notify_System::has_import_plugin( 'cpo-widgets' ),
 			"plugin_slug" => 'cpo-widgets'
 		),
-		
 		array(
 			"id"          => 'affluent-req-ac-install-wp-import-plugin',
 			"title"       => MT_Notify_System::wordpress_importer_title(),
@@ -97,21 +100,21 @@ if ( is_admin() ) {
 			"id"          => 'affluent-req-ac-download-data',
 			"title"       => esc_html__( 'Download theme sample data', 'affluent' ),
 			"description" => esc_html__( 'Head over to our website and download the sample content data.', 'affluent' ),
-			"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/affluent-lite-posts.xml">' . __( 'Posts', 'affluent' ) . '</a>, 
-							   <a target="_blank"  href="https://www.machothemes.com/sample-data/affluent-lite-widgets.wie">' . __( 'Widgets', 'affluent' ) . '</a>',
+			"help"        => '<a target="_blank"  href="https://www.cpothemes.com/sample-data/affluent-pro-posts.xml">' . __( 'Posts', 'affluent' ) . '</a>, 
+							   <a target="_blank"  href="https://www.cpothemes.com/sample-data/affluent-pro-widgets.wie">' . __( 'Widgets', 'affluent' ) . '</a>',
 			"check"       => MT_Notify_System::has_content(),
 		),
 		array(
 			"id"    => 'affluent-req-ac-install-data',
 			"title" => esc_html__( 'Import Sample Data', 'affluent' ),
-			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'affluent' ) . '</a> 
-							   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'affluent' ) . '</a>',
-			"check" => MT_Notify_System::has_import_plugins(),
+			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
+									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
+			"check" => MT_Notify_System::has_import_content(),
 		),
 		array(
 			"id"          => 'affluent-req-ac-static-latest-news',
 			"title"       => esc_html__( 'Set front page to static', 'affluent' ),
-			"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'affluent' ),
+			"description" => esc_html__( 'If you just installed Affleunt, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'affluent' ),
 			"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/> <br/><a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set manually', 'affluent' ) . '</a> <a class="button button-primary" id="set_page_automatic"  href="#">' . __( 'Set automatically', 'affluent' ) . '</a>',
 			"check"       => MT_Notify_System::is_not_static_page()
 		),
