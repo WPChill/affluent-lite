@@ -77,7 +77,7 @@ if ( is_admin() ) {
 		),
 		array(
 			"id"          => 'affluent-req-ac-install-cpo-widgets',
-			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'affluent' ), __( 'Activate: CPO Widgets', 'affluent' ), 'cpo-content-types' ),
+			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'affluent' ), __( 'Activate: CPO Widgets', 'affluent' ), 'cpo-widgets' ),
 			"description" => __( 'It is highly recommended that you install the CPO Widgets plugin. It will help you manage all the special widgets that this theme supports.', 'affluent' ),
 			"check"       => MT_Notify_System::has_import_plugin( 'cpo-widgets' ),
 			"plugin_slug" => 'cpo-widgets'
@@ -107,8 +107,8 @@ if ( is_admin() ) {
 		array(
 			"id"    => 'affluent-req-ac-install-data',
 			"title" => esc_html__( 'Import Sample Data', 'affluent' ),
-			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'newsmag' ) . '</a> 
-									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'newsmag' ) . '</a>',
+			"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'affluent' ) . '</a> 
+									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'affluent' ) . '</a>',
 			"check" => MT_Notify_System::has_import_content(),
 		),
 		array(
