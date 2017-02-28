@@ -272,6 +272,7 @@ NAVIGATION
 .menu-portfolio .current_page_item  ul li a, .menu-portfolio .current-cat ul li a { color:#222; background:none; }
 
 
+
 /* NEXT/PREV POST NAVIGATION */
 .navigation { }
 .navigation .nav-prev,
@@ -341,12 +342,13 @@ POSTS & PAGES
 .cpo_portfolio .portfolio-details div:first-child { margin:0; border-top:none; }
 .cpo_portfolio .portfolio-details .details-icon { position:absolute; display:block; width:15px; margin-top:1px; font-size:1.3em; text-align:center; left:0; top:17px; }
 .cpo_portfolio .portfolio-content { }
+.
 
 
 /* PORTFOLIO SHOWCASE */
 .portfolio { clear:both; padding:50px 0 50px; }
 .portfolio-item { display:block; overflow:hidden; background:#fff; position:relative; text-align:center; padding:0; margin:0 1px 1px 0; }
-.portfolio-item-image { display:block; overflow:hidden; position:relative; }
+.portfolio-item-image { display:block; position:relative; }
 .portfolio-item-image img { display:block; max-width:100%; margin:0; width:100%; height:auto; -moz-transition:0.3s all; -webkit-transition:0.3s all; transition:0.3s all; }
 .portfolio-item .portfolio-item-overlay { opacity:0; position:absolute; top:0; bottom:0; left:0; right:0; text-align:center; -moz-transition:0.3s all; -webkit-transition:0.3s all; transition:0.3s all; z-index:9999; }
 .portfolio-item .portfolio-item-title { position:absolute; bottom:50%; width:80%; margin:0 10%; padding:0 0 15px; border-bottom:1px solid rgba(0,0,0,0.1); -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; }
@@ -354,6 +356,7 @@ POSTS & PAGES
 .portfolio-item a:hover { text-decoration:none; }
 .portfolio-item:hover .portfolio-item-overlay { opacity:1; }
 .portfolio-item:hover .portfolio-item-icon { top:50%; opacity:1; text-shadow:0 0 10px #fff; }
+.portfolio-item-image{ color:#fff;position: absolute;bottom: 50%;width: 80%;margin: 0 10%;padding: 0 0 15px;-moz-transition: 0.4s all;-webkit-transition: 0.4s all;transition: 0.4s all;}
 
 
 /* SERVICES */
