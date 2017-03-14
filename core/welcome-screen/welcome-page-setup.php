@@ -51,6 +51,7 @@ if ( is_admin() ) {
 	global $affluent_required_actions, $affluent_recommended_plugins;
 	$affluent_recommended_plugins = array(
 		'kiwi-social-share' 		=> array( 'recommended' => true ),
+		'modula-best-grid-gallery' 	=> array( 'recommended' => true ),
 		'uber-nocaptcha-recaptcha'	=> array( 'recommended' => false ),
 		'cpo-shortcodes' 			=> array( 'recommended' => false ),
 		'wp-product-review'       	=> array( 'recommended' => false ),
