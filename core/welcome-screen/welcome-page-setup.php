@@ -1,46 +1,8 @@
 <?php
-
-add_action( 'customize_register', 'a_customize_register' );
-
-function a_customize_register($wp_customize){
-
-	require_once get_template_directory() . '/core/welcome-screen/custom-recommend-action-section.php';
-		$wp_customize->register_section_type( 'Affluent_Customize_Section_Recommend' );
-
-		// Recomended Actions
-		$wp_customize->add_section(
-			new Affluent_Customize_Section_Recommend(
-				$wp_customize,
-				'affluent_recomended-section',
-				array(
-					'title'    => esc_html__( 'Recomended Actions', 'affluent' ),
-					'social_text'	=> esc_html__( 'We are social :', 'affluent' ),
-					'plugin_text'	=> esc_html__( 'Recomended Plugins :', 'affluent' ),
-					'facebook' => 'https://www.facebook.com/cpothemes',
-					'twitter' => 'https://twitter.com/cpothemes',
-					'wp_review' => true,
-					'priority' => 0
-				)
-			)
-		);
-
-}
-
 add_action( 'customize_controls_enqueue_scripts', 'affluent_welcome_scripts_for_customizer', 0 );
 
 function affluent_welcome_scripts_for_customizer(){
 	wp_enqueue_style( 'cpotheme-welcome-screen-customizer-css', get_template_directory_uri() . '/core/welcome-screen/css/welcome_customizer.css' );
-	wp_enqueue_style( 'plugin-install' );
-	wp_enqueue_script( 'plugin-install' );
-	wp_enqueue_script( 'updates' );
-	wp_add_inline_script( 'plugin-install', 'var pagenow = "customizer";' );
-	wp_enqueue_script( 'cpotheme-welcome-screen-customizer-js', get_template_directory_uri() . '/core/welcome-screen/js/welcome_customizer.js', array( 'customize-controls' ), '1.0', true );
-
-	wp_localize_script( 'cpotheme-welcome-screen-customizer-js', 'affluentWelcomeScreenObject', array(
-		'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
-		'template_directory'       => get_template_directory_uri(),
-	) );
-
 }
 
 // Load the system checks ( used for notifications )
@@ -73,14 +35,14 @@ if ( is_admin() ) {
 			"id"          => 'affluent-req-ac-install-cpo-content-types',
 			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Content Types', 'affluent' ), __( 'Activate: CPO Content Types', 'affluent' ), 'cpo-content-types' ),
 			"description" => __( 'It is highly recommended that you install the CPO Content Types plugin. It will help you manage all the special content types that this theme supports.', 'affluent' ),
-			"check"       => MT_Notify_System::has_import_plugin( 'cpo-content-types' ),
+			"check"       => MT_Notify_System::has_plugin( 'cpo-content-types' ),
 			"plugin_slug" => 'cpo-content-types'
 		),
 		array(
 			"id"          => 'affluent-req-ac-install-cpo-widgets',
 			"title"       => MT_Notify_System::create_plugin_requirement_title( __( 'Install: CPO Widgets', 'affluent' ), __( 'Activate: CPO Widgets', 'affluent' ), 'cpo-widgets' ),
 			"description" => __( 'It is highly recommended that you install the CPO Widgets plugin. It will help you manage all the special widgets that this theme supports.', 'affluent' ),
-			"check"       => MT_Notify_System::has_import_plugin( 'cpo-widgets' ),
+			"check"       => MT_Notify_System::has_plugin( 'cpo-widgets' ),
 			"plugin_slug" => 'cpo-widgets'
 		),
 		array(
@@ -114,4 +76,38 @@ if ( is_admin() ) {
 		),
 	);
 	require get_template_directory() . '/core/welcome-screen/welcome-screen.php';
+}
+
+add_action( 'customize_register', 'affluent_customize_register' );
+function affluent_customize_register( $wp_customize ){
+	global $affluent_required_actions, $affluent_recommended_plugins;
+	$theme_slug = 'affluent';
+	$customizer_recommended_plugins = array();
+	if ( is_array( $affluent_recommended_plugins ) ) {
+		foreach ( $affluent_recommended_plugins as $k => $s ) {
+			if( $s['recommended'] ) {
+				$customizer_recommended_plugins[$k] = $s;
+			}
+		}
+	}
+	
+	$wp_customize->add_section(
+	  new Epsilon_Section_Recommended_Actions(
+	    $wp_customize,
+	    'epsilon_recomended_section',
+	    array(
+	      'title'                        => esc_html__( 'Recomended Actions', 'affluent' ),
+	      'social_text'                  => esc_html__( 'We are social', 'affluent' ),
+	      'plugin_text'                  => esc_html__( 'Recomended Plugins', 'affluent' ),
+	      'actions'                      => $affluent_required_actions,
+	      'plugins'                      => $customizer_recommended_plugins,
+	      'theme_specific_option'        => $theme_slug . '_show_required_actions',
+	      'theme_specific_plugin_option' => $theme_slug . '_show_recommended_plugins',
+	      'facebook'                     => 'https://www.facebook.com/cpothemes',
+	      'twitter'                      => 'https://twitter.com/cpothemes',
+	      'wp_review'                    => false,
+	      'priority'                     => 0
+	    )
+	  )
+	);
 }
