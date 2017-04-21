@@ -375,16 +375,16 @@ class Affluent_Welcome {
 
 			<h2 class="nav-tab-wrapper wp-clearfix">
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=getting_started' ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'allegiant' ); ?></a>
+				   class="nav-tab <?php echo $active_tab == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'affluent' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=recommended_actions' ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'allegiant' ); ?>
+				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'affluent' ); ?>
 					<?php echo $action_count > 0 ? '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : '' ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=recommended_plugins' ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'allegiant' ); ?></a>
+				   class="nav-tab <?php echo $active_tab == 'recommended_plugins' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Plugins', 'affluent' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=support' ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'allegiant' ); ?></a>
+				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'affluent' ); ?></a>
 				<a href="<?php echo admin_url( 'themes.php?page=cpotheme-welcome&tab=features' ); ?>"
-				   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'allegiant' ); ?></a>
+				   class="nav-tab <?php echo $active_tab == 'features' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Lite vs PRO', 'affluent' ); ?></a>
 			</h2>
 
 			<?php

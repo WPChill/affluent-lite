@@ -173,7 +173,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
         ),
 
         'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
-        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+        'button_text'  => esc_html__( 'See PRO vs Lite', 'affluent' ),
         'second_button_url'  => cpotheme_upgrade_link(),
         'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
         'separator' => '- or -'
@@ -251,7 +251,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'affluent' ),
 	        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
-	        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+	        'button_text'  => esc_html__( 'See PRO vs Lite', 'affluent' ),
 	        'second_button_url'  => cpotheme_upgrade_link(),
 	        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
 	        'separator' => '- or -'
@@ -284,7 +284,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	            esc_html__( 'In the PRO version you can show the homepage portfolio in all pages.', 'affluent' ),
 	        ),
 	        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
-	        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+	        'button_text'  => esc_html__( 'See PRO vs Lite', 'affluent' ),
 	        'second_button_url'  => cpotheme_upgrade_link(),
 	        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
 	        'separator' => '- or -'
@@ -339,7 +339,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	        'button_url'   => cpotheme_upgrade_link(),
 	        'button_text'  => esc_html__( 'Get the PRO version!', 'affluent' ),
 	        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
-	        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+	        'button_text'  => esc_html__( 'See PRO vs Lite', 'affluent' ),
 	        'second_button_url'  => cpotheme_upgrade_link(),
 	        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
 	        'separator' => '- or -'
