@@ -88,6 +88,8 @@ function cpotheme_customizer($customize){
 				$customize->add_control(new WP_Customize_Image_Control($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'collection': 
 				$customize->add_control(new CPO_Customize_Collection_Control($customize, 'cpotheme_'.$control_id, $args)); break;
+				case 'epsilon-upsell' :
+				$customize->add_control(new Epsilon_Control_Upsell($customize, 'cpotheme_'.$control_id, $args)); break;
 				case 'checkbox' :
 				$args['type'] = 'epsilon-toggle';
 				$customize->add_control(new Epsilon_Control_Toggle($customize, 'cpotheme_'.$control_id, $args)); break;

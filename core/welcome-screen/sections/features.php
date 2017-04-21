@@ -32,10 +32,25 @@ $features = array(
 		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
 		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
 	),
-	'tagline' => array(
-		'label'   	=> __( 'Tagline', 'affluent' ),
-		'cpo'    	=> __( 'Minimal', 'affluent' ),
-		'cpo-pro' 	=> __( 'Improved', 'affluent' )
+	'homepage' => array(
+		'label'   	=> __( 'Show/Hide breadcrumbs, language swither, shopping cart and credit link', 'affluent' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'footer' => array(
+		'label'   	=> __( 'Footer widgets organized in columns', 'affluent' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'copyright' => array(
+		'label'   	=> __( 'Add Copyright text to footer', 'affluent' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
+	),
+	'social-icons' => array(
+		'label'   	=> __( 'Add social icons to footer', 'affluent' ),
+		'cpo'     => '<span class="dashicons dashicons-no-alt"></span>',
+		'cpo-pro' => '<span class="dashicons dashicons-yes"></span></i>'
 	),
 	'dedicated-support' => array(
 		'label'       => __( 'Dedicated Support Team', 'affluent' ),

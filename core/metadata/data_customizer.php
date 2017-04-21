@@ -19,6 +19,11 @@ if(!function_exists('cpotheme_metadata_panels')){
 if(!function_exists('cpotheme_metadata_sections')){
 	function cpotheme_metadata_sections(){
 		$data = array();
+
+		$data['cpotheme_upsell'] = array(
+		'title' => __('Affluent Pro', 'affluent'),
+		'capability' => 'edit_theme_options',
+		'priority' => 10);
 		
 		$data['cpotheme_management'] = array(
 		'title' => __('General Theme Options', 'affluent'),
@@ -61,7 +66,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['cpotheme_layout_features'] = array(
 			'title' => __('Features', 'affluent'),
-			'description' => sprintf(__('Upgrade to %s to customize the columns and appearance of the feature blocks.', 'affluent'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -70,7 +74,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			$data['cpotheme_layout_portfolio'] = array(
 			'title' => __('Portfolio', 'affluent'),
-			'description' => sprintf(__('Upgrade to %s to control the number of portfolio columns, related portfolio items, and overall appearance.', 'affluent'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -97,7 +100,6 @@ if(!function_exists('cpotheme_metadata_sections')){
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			$data['cpotheme_layout_testimonials'] = array(
 			'title' => __('Testimonials', 'affluent'),
-			'description' => sprintf(__('Upgrade to %s to customize the appearance of testimonials.', 'affluent'), cpotheme_upgrade_link()),
 			'capability' => 'edit_theme_options',
 			'panel' => 'cpotheme_layout',
 			'priority' => 50);
@@ -139,6 +141,44 @@ if(!function_exists('cpotheme_metadata_sections')){
 if(!function_exists('cpotheme_metadata_customizer')){
 	function cpotheme_metadata_customizer($std = null){
 		$data = array();
+
+		$data['general_upsell'] = array(
+		'section'      => 'cpotheme_upsell',
+		'type'		   => 'epsilon-upsell',
+        'options'      => array(
+            esc_html__( 'Slider options', 'affluent' ),
+            esc_html__( 'WooCommerce', 'affluent' ),
+            esc_html__( 'Reorder Sections', 'affluent' ),
+            esc_html__( 'Section Description', 'affluent' ),
+            esc_html__( 'Custom Colors', 'affluent' ),
+            esc_html__( 'Custom Typography', 'affluent' ),
+            esc_html__( 'Footer widgets', 'affluent' ),
+            esc_html__( 'Copyright Text', 'affluent' ),
+            esc_html__( 'Social Icons', 'affluent' ),
+		    esc_html__( 'Dedicated Support Team', 'affluent'),
+		    esc_html__( 'Updates + Feature releases for 1 year', 'affluent'),
+        ),
+        'requirements' => array(
+            esc_html__( 'You can set the slider height. Also you can control the speed and the duration of a slide.', 'affluent' ),
+            esc_html__( 'Now you can add your shop products on Homepage.', 'affluent' ),
+            esc_html__( 'You can order Homepage sections anyway you want', 'affluent' ),
+            esc_html__( 'For each section, apart from title one you can also add a description for users to better understand your sections content', 'affluent' ),
+            esc_html__( 'You can change your site\'s colors directly from Customizer. Changes happen in real time.', 'affluent' ),
+            esc_html__( 'You can change your site\'s typography directly from Customizer. Changes happen in real time.', 'affluent' ),
+            esc_html__( 'In the PRO version you have the option to add footer widgets. You can organize these widgets in 2,3,4 or 5 columns.', 'affluent' ),
+            esc_html__( 'In the PRO version you can chage the copyright text.', 'affluent' ),
+            esc_html__( 'In the PRO version you can add social icons in footer.', 'affluent' ),
+	   		esc_html__( 'Theme updates and support for 1 year - included with purchase', 'affluent'),
+	   		esc_html__( 'Theme updates and support for 1 year - included with purchase', 'affluent'),
+        ),
+
+        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
+        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+        'second_button_url'  => cpotheme_upgrade_link(),
+        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
+        'separator' => '- or -'
+
+		);
 		
 		if(!function_exists('get_custom_logo')){
 			$data['general_logo'] = array(
@@ -197,6 +237,26 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Homepage Features
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
+			$data['features_upsell'] = array(
+			'section'      => 'cpotheme_layout_features',
+			'type'		   => 'epsilon-upsell',
+	        'options'      => array(
+	            esc_html__( 'Features Columns', 'affluent' ),
+	            esc_html__( 'Always display section', 'affluent' ),
+	        ),
+	        'requirements' => array(
+	            esc_html__( 'You can select on how many Columns you want to show your features.', 'affluent' ),
+	            esc_html__( 'In the PRO version you can show the homepage features in all pages.', 'affluent' ),
+	        ),
+	        'button_url'   => cpotheme_upgrade_link(),
+	        'button_text'  => esc_html__( 'Get the PRO version!', 'affluent' ),
+	        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
+	        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+	        'second_button_url'  => cpotheme_upgrade_link(),
+	        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
+	        'separator' => '- or -'
+			);
+
 			$data['home_features'] = array(
 			'label' => __('Features Description', 'affluent'),
 			'section' => 'cpotheme_layout_features',
@@ -208,7 +268,28 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Portfolio layout
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){			
+		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
+
+			$data['portfolio_upsell'] = array(
+			'section'      => 'cpotheme_layout_portfolio',
+			'type'		   => 'epsilon-upsell',
+	        'options'      => array(
+	            esc_html__( 'Portfolio Columns', 'affluent' ),
+	            esc_html__( 'Related Portfolios', 'affluent' ),
+	            esc_html__( 'Always display section', 'affluent' ),
+	        ),
+	        'requirements' => array(
+	            esc_html__( 'You can select on how many Columns you want to show your portfolio.', 'affluent' ),
+	            esc_html__( 'You can enable related portfolio.', 'affluent' ),
+	            esc_html__( 'In the PRO version you can show the homepage portfolio in all pages.', 'affluent' ),
+	        ),
+	        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
+	        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+	        'second_button_url'  => cpotheme_upgrade_link(),
+	        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
+	        'separator' => '- or -'
+			);
+
 			$data['home_portfolio'] = array(
 			'label' => __('Portfolio Description', 'affluent'),
 			'section' => 'cpotheme_layout_portfolio',
@@ -245,6 +326,25 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		
 		//Testimonials
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
+
+			$data['features_upsell'] = array(
+			'section'      => 'cpotheme_layout_testimonials',
+			'type'		   => 'epsilon-upsell',
+	        'options'      => array(
+	            esc_html__( 'Always display section', 'affluent' ),
+	        ),
+	        'requirements' => array(
+	            esc_html__( 'In the PRO version you can show the homepage testimonials in all pages.', 'affluent' ),
+	        ),
+	        'button_url'   => cpotheme_upgrade_link(),
+	        'button_text'  => esc_html__( 'Get the PRO version!', 'affluent' ),
+	        'button_url'   => esc_url_raw( get_admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
+	        'button_text'  => esc_html__( 'See PRO vs Lite', 'newsmag' ),
+	        'second_button_url'  => cpotheme_upgrade_link(),
+	        'second_button_text' => esc_html__( 'Get the PRO version!', 'affluent' ),
+	        'separator' => '- or -'
+			);
+
 			$data['home_testimonials'] = array(
 			'label' => __('Testimonials Description', 'affluent'),
 			'section' => 'cpotheme_layout_testimonials',
