@@ -16,9 +16,6 @@ if ( is_admin() ) {
 		'modula-best-grid-gallery' 	=> array( 'recommended' => true ),
 		'uber-nocaptcha-recaptcha'	=> array( 'recommended' => false ),
 		'cpo-shortcodes' 			=> array( 'recommended' => false ),
-		'wp-product-review'       	=> array( 'recommended' => false ),
-		'pirate-forms'           	=> array( 'recommended' => true ),
-		'visualizer'             	=> array( 'recommended' => false )
 	);
 	/*
 	 * id - unique id; required
@@ -105,7 +102,7 @@ function affluent_customize_register( $wp_customize ){
 	      'theme_specific_plugin_option' => $theme_slug . '_show_recommended_plugins',
 	      'facebook'                     => 'https://www.facebook.com/cpothemes',
 	      'twitter'                      => 'https://twitter.com/cpothemes',
-	      'wp_review'                    => false,
+	      'wp_review'                    => true,
 	      'priority'                     => 0
 	    )
 	  )
