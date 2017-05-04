@@ -285,3 +285,6 @@
 .free-pro-table .text-right {
     text-align: right;
 }
+.about-wrap .feature-section.two-col .col {
+    margin-top: 40px;
+}
