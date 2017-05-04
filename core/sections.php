@@ -37,7 +37,7 @@ if(!function_exists('cpotheme_section_slider')){
 	function cpotheme_section_slider(){
 		if(defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'slider');
+				get_template_part('template-parts/homepage', 'slider');
 			}
 		}
 	}
@@ -49,7 +49,7 @@ if(!function_exists('cpotheme_section_features')){
 	function cpotheme_section_features(){
 		if(defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'features');
+				get_template_part('template-parts/homepage', 'features');
 			}
 		}
 	}
@@ -61,7 +61,7 @@ if(!function_exists('cpotheme_section_featured')){
 	function cpotheme_section_featured(){
 		if(defined('CPOTHEME_USE_PAGES') && CPOTHEME_USE_PAGES == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'featured');
+				get_template_part('template-parts/homepage', 'featured');
 			}
 		}
 	}
@@ -72,7 +72,7 @@ if(!function_exists('cpotheme_section_featured')){
 if(!function_exists('cpotheme_section_tagline')){
 	function cpotheme_section_tagline(){
 		if(is_front_page()){
-			get_template_part('homepage', 'tagline');
+			get_template_part('template-parts/homepage', 'tagline');
 		}
 	}
 }
@@ -83,7 +83,7 @@ if(!function_exists('cpotheme_section_portfolio')){
 	function cpotheme_section_portfolio(){
 		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'portfolio');
+				get_template_part('template-parts/homepage', 'portfolio');
 			}
 		}
 	}
@@ -95,7 +95,7 @@ if(!function_exists('cpotheme_section_products')){
 	function cpotheme_section_products(){
 		if(defined('CPOTHEME_USE_PRODUCTS') && CPOTHEME_USE_PRODUCTS == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'products');
+				get_template_part('template-parts/homepage', 'products');
 			}
 		}
 	}
@@ -107,7 +107,7 @@ if(!function_exists('cpotheme_section_services')){
 	function cpotheme_section_services(){
 		if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'services');
+				get_template_part('template-parts/homepage', 'services');
 			}
 		}
 	}
@@ -119,7 +119,7 @@ if(!function_exists('cpotheme_section_team')){
 	function cpotheme_section_team(){
 		if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'team');
+				get_template_part('template-parts/homepage', 'team');
 			}
 		}
 	}
@@ -131,7 +131,7 @@ if(!function_exists('cpotheme_section_testimonials')){
 	function cpotheme_section_testimonials(){
 		if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'testimonials');
+				get_template_part('template-parts/homepage', 'testimonials');
 			}
 		}
 	}
@@ -143,7 +143,7 @@ if(!function_exists('cpotheme_section_clients')){
 	function cpotheme_section_clients(){
 		if(defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
 			if(is_front_page()){
-				get_template_part('homepage', 'clients');
+				get_template_part('template-parts/homepage', 'clients');
 			}
 		}
 	}

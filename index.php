@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part('element', 'page-header'); ?>
+<?php get_template_part('template-parts/element', 'page-header'); ?>
 
 <?php if(cpotheme_show_posts()): ?>
 <div id="main" class="main">

@@ -630,9 +630,12 @@ span.wpcf7-not-valid-tip { left:auto; right:10px; width:auto; top:0; border:none
 span.wpcf7-not-valid-tip:before { font-family:'fontawesome'; content:'\f00d'; margin-right:10px; }
 span.wpcf7-form-control-wrap { width:100%; }
 
-
 /* PROFILE BUILDER */
 .wppb-form-field { list-style:none; margin:0 0 20px; }
+
+/* Woocommerce */
+.woocommerce div.product div.images .flex-control-thumbs li:nth-child(4n+1) { clear: left; }
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper { margin: 0; }
 
 
 
