@@ -22,8 +22,8 @@ if(!function_exists('cpotheme_metadata_sections')){
 
 		$data['epsilon-section-pro'] = array(
 		'type' => 'epsilon-section-pro',
-		'title'       => esc_html__( 'LITE vs PRO comparison', 'allegiant' ),
-		'button_text' => esc_html__( 'Learn more', 'allegiant' ),
+		'title'       => esc_html__( 'LITE vs PRO comparison', 'affluent' ),
+		'button_text' => esc_html__( 'Learn more', 'affluent' ),
 		'button_url'  => esc_url_raw( admin_url() . 'themes.php?page=cpotheme-welcome&tab=features' ),
 		'priority'    => 0
 		);
