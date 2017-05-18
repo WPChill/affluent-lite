@@ -1,3 +1,6 @@
+Version 1.0.4
+Fixed Single Post bug.
+
 Version 1.0.2
 Added Epsilon Framework
 Added Compatibility with Woocommerce 3.x
