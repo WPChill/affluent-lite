@@ -102,7 +102,7 @@ $features = array(
         <tr>
             <td></td>
             <td colspan="2" class="text-right"><a href="//www.cpothemes.com/theme/affluent?utm_source=worg&utm_medium=about-page&utm_campaign=upsell" target="_blank"
-                               class="button button-primary button-hero"><span class="dashicons dashicons-cart"></span><?php _e( 'Get the Pro Version Now!', 'affluent' ) ?></a></td>
+                               class="button button-primary button-hero"><span class="dashicons dashicons-cart"></span><?php _e( 'Get The Pro Version Now!', 'affluent' ) ?></a></td>
         </tr>
         </tbody>
     </table>
