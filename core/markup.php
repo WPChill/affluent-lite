@@ -12,6 +12,9 @@ if(!function_exists('cpotheme_page_title')){
 			woocommerce_page_title();
 		}elseif(is_category() || is_tag() || is_tax()){
 			echo single_tag_title('', true);
+		}elseif( is_home() && ! is_front_page() ){
+			$blog_title = get_the_title( get_option('page_for_posts', true) );
+			echo $blog_title;
 		}elseif(is_author()){
 			the_author();
 		}elseif(is_date()){

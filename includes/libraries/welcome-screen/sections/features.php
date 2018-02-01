@@ -89,7 +89,9 @@ $features = array(
             <tr>
 	            <td class="feature">
 		            <h3><?php echo $feature['label']; ?></h3>
-		            <p><?php echo $feature['sub']; ?></p>
+		            <?php if ( isset( $feature['sub'] ) ): ?>
+		            	<p><?php echo $feature['sub']; ?></p>
+		            <?php endif ?>
 	            </td>
                 <td class="cpo-feature">
 					<?php echo $feature['cpo']; ?>
@@ -101,7 +103,7 @@ $features = array(
 		<?php endforeach; ?>
         <tr>
             <td></td>
-            <td colspan="2" class="text-right"><a href="//www.cpothemes.com/theme/affluent?utm_source=worg&utm_medium=about-page&utm_campaign=upsell" target="_blank"
+            <td colspan="2" class="text-right"><a href="//www.cpothemes.com/theme/affluent?utm_source=affluent&utm_medium=about-page&utm_campaign=upsell" target="_blank"
                                class="button button-primary button-hero"><span class="dashicons dashicons-cart"></span><?php _e( 'Get The Pro Version Now!', 'affluent' ) ?></a></td>
         </tr>
         </tbody>

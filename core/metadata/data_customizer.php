@@ -48,7 +48,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 		'panel' => 'cpotheme_layout',
 		'priority' => 50);
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
+		if( defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
 			$data['cpotheme_layout_slider'] = array(
 			'title' => __('Slider', 'affluent'),
 			'description' => sprintf(__('Upgrade to %s to customize the behavior of the slider.', 'affluent'), cpotheme_upgrade_link()),
@@ -66,7 +66,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
+		if( defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['cpotheme_layout_features'] = array(
 			'title' => __('Features', 'affluent'),
 			'capability' => 'edit_theme_options',
@@ -74,7 +74,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
+		if( defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			$data['cpotheme_layout_portfolio'] = array(
 			'title' => __('Portfolio', 'affluent'),
 			'capability' => 'edit_theme_options',
@@ -82,7 +82,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
+		if( defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			$data['cpotheme_layout_services'] = array(
 			'title' => __('Services', 'affluent'),
 			'description' => sprintf(__('Upgrade to %s to control the number of columns for services.', 'affluent'), cpotheme_upgrade_link()),
@@ -91,7 +91,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
+		if( defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			$data['cpotheme_layout_team'] = array(
 			'title' => __('Team Members', 'affluent'),
 			'description' => sprintf(__('Upgrade to %s to control the number of columns of the team section.', 'affluent'), cpotheme_upgrade_link()),
@@ -100,7 +100,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
+		if( defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			$data['cpotheme_layout_testimonials'] = array(
 			'title' => __('Testimonials', 'affluent'),
 			'capability' => 'edit_theme_options',
@@ -108,7 +108,7 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
+		if( defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
 			$data['cpotheme_layout_clients'] = array(
 			'title' => __('Clients', 'affluent'),
 			'description' => sprintf(__('Upgrade to %s to customize the appearance of clients.', 'affluent'), cpotheme_upgrade_link()),
@@ -192,7 +192,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Homepage Slider
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
+		if( defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){
 			$data['slider_settings'] = array(
 			'label' => __('Slider Options', 'affluent'),
 			'description' => __('Customize the speed, timeout and effects of the homepage slider.', 'affluent'),
@@ -201,7 +201,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Homepage Features
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
+		if( defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['features_upsell'] = array(
 			'section'      => 'cpotheme_layout_features',
 			'type'		   => 'epsilon-upsell',
@@ -233,7 +233,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Portfolio layout
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
+		if( defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 
 			$data['portfolio_upsell'] = array(
 			'section'      => 'cpotheme_layout_portfolio',
@@ -266,7 +266,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Services layout
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
+		if( defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			$data['home_services'] = array(
 			'label' => __('Services Description', 'affluent'),
 			'section' => 'cpotheme_layout_services',
@@ -278,7 +278,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Services layout
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
+		if( defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			$data['home_team'] = array(
 			'label' => __('Team Members Description', 'affluent'),
 			'section' => 'cpotheme_layout_team',
@@ -290,7 +290,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Testimonials
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
+		if( defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 
 			$data['features_upsell'] = array(
 			'section'      => 'cpotheme_layout_testimonials',
@@ -321,7 +321,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		}
 		
 		//Clients
-		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
+		if( defined('CPOTHEME_USE_CLIENTS') && CPOTHEME_USE_CLIENTS == true){
 			$data['home_clients'] = array(
 			'label' => __('Clients Description', 'affluent'),
 			'section' => 'cpotheme_layout_clients',
