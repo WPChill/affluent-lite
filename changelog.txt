@@ -1,3 +1,8 @@
+Version 1.0.6
+Improved Welcome Screen
+Fixed Bug #2 ( https://github.com/MachoThemes/affluent-lite/issues/2 )
+Fixed Bug #4 ( https://github.com/MachoThemes/affluent-lite/issues/4 )
+
 Version 1.0.5
 Fixed Homepage Portfolio Item Bug
 
