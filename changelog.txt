@@ -1,3 +1,7 @@
+Version 1.0.7
+Added ShortPixel as a recommended plugin.
+Fixed Modula recommendation bug.
+
 Version 1.0.6
 Improved Welcome Screen
 Fixed Bug #2 ( https://github.com/MachoThemes/affluent-lite/issues/2 )
