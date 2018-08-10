@@ -1,3 +1,6 @@
+Version 1.0.8
+Minor Fixes
+
 Version 1.0.7
 Added ShortPixel as a recommended plugin.
 Fixed Modula recommendation bug.

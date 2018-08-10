@@ -13,8 +13,11 @@ class CPO_Theme {
 
 		// Recomended Plugins
 		$this->plugins = array(
-			'kiwi-social-share' 		=> array( 'recommended' => true ),
-			'uber-nocaptcha-recaptcha'	=> array( 'recommended' => false ),
+			'wpforms-lite'               => array( 'recommended' => true ),
+			'shortpixel-image-optimiser' => array( 'recommended' => true ),
+			'simple-author-box'          => array( 'recommended' => true ),
+			'kiwi-social-share'          => array( 'recommended' => false ),
+			'uber-nocaptcha-recaptcha'   => array( 'recommended' => false ),
 		);
 
 		// Recomendeed Actions
@@ -39,13 +42,6 @@ class CPO_Theme {
 				"description" => __( 'It is highly recommended that you install the Modula plugin.', 'affluent' ),
 				"check"       => CPOTheme_Notify_System::has_plugin( 'modula-best-grid-gallery' ),
 				"plugin_slug" => 'modula-best-grid-gallery',
-			),
-			array(
-				"id"          => 'affluent-req-ac-install-shortpixel',
-				"title"       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: ShortPixel Image Optimizer', 'affluent' ), __( 'Activate: ShortPixel Image Optimizer', 'affluent' ), 'shortpixel-image-optimiser' ),
-				"description" => __( 'It is highly recommended that you install the ShortPixel Image Optimizer plugin.', 'affluent' ),
-				"check"       => CPOTheme_Notify_System::has_plugin( 'shortpixel-image-optimiser' ),
-				"plugin_slug" => 'shortpixel-image-optimiser',
 			),
 		);
 		
@@ -128,7 +124,6 @@ class CPO_Theme {
 		$import_plugins = array(
 			'cpo-companion' => esc_html__( 'CPO Companion', 'affluent' ),
 			'modula-best-grid-gallery' => esc_html__( 'Modula Gallery', 'affluent' ),
-			'shortpixel-image-optimiser' => esc_html__( 'ShortPixel Image Optimizer', 'affluent' ),
 		);
 
 		$plugins_html = '';
