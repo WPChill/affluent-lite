@@ -1,11 +1,11 @@
 /*
 Theme Name:Affluent
 Theme URI:http://www.cpothemes.com/theme/affluent
-Description:Affluent is a free corporate WordPress theme perfect for creating professional looking websites with minimal effort. You can turn Affluent into a portfolio WordPress theme easily thanks to CPO Content Types, as well as adding a homepage slider, featured blocks, or even a testimonial rotator. This free theme also provides complete integration with popular WordPress plugins like WooCommerce, Yoast SEO, WPML, and Contact Form 7. 
+Description:Affluent is a free corporate WordPress theme perfect for creating professional looking websites with minimal effort. You can turn Affluent into a portfolio WordPress theme easily thanks to CPO Content Types, as well as adding a homepage slider, featured blocks, or even a testimonial rotator. This free theme also provides complete integration with popular WordPress plugins like WooCommerce, Yoast SEO, WPML, and Contact Form 7.
 Tags: one-column, two-columns, right-sidebar, full-width-template, sticky-post, theme-options, custom-background, footer-widgets, grid-layout, portfolio, blog, e-commerce, custom-menu, featured-images, threaded-comments, translation-ready, custom-header
 Author:CPOThemes
 Author URI:http://www.cpothemes.com
-Version:1.0.8
+Version:1.0.9
 License:GNU General Public License 2.0
 License URI:license.txt
 Text Domain:affluent
@@ -21,11 +21,11 @@ body { font-family:'Open Sans', Arial, Helvetica, sans-serif; background:#f0f0f8
 
 /* HEADINGS */
 h1, h2, h3, h4, h5, h6, .heading { color:#33333a; line-height:1.2; margin:0 0 20px; font-weight:bold; }
-h1 { font-size:2.5em; } 
-h2 { font-size:2em; } 
-h3 { font-size:1.5em; } 
-h4 { font-size:1.3em; } 
-h5 { font-size:1.2em; } 
+h1 { font-size:2.5em; }
+h2 { font-size:2em; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.3em; }
+h5 { font-size:1.2em; }
 h6 { font-size:1.1em; }
 
 /* HYPERLINKS */
@@ -37,10 +37,10 @@ blockquote { display:block; font-style:italic; padding:0 5%; margin:25px 0; }
 blockquote cite, blockquote em, blockquote i { font-style:normal; }
 
 /* FORMS */
-input[type=text], input[type=password], input[type=input], 
-input[type=tel], input[type=url], input[type=email], 
-input[type=number], input[type=range], input[type=search], input[type=color], 
-input[type=time], input[type=week], input[type=month], input[type=date], input[type=datetime], 
+input[type=text], input[type=password], input[type=input],
+input[type=tel], input[type=url], input[type=email],
+input[type=number], input[type=range], input[type=search], input[type=color],
+input[type=time], input[type=week], input[type=month], input[type=date], input[type=datetime],
 textarea, select { border:1px solid #ddd; padding:8px 6px; background:#f5f5f5; }
 input[type=submit] { width:auto; -webkit-appearance:none; }
 
@@ -98,23 +98,23 @@ LAYOUT
 .slider-slides .slide-center .slide-caption { float:none; margin:0 30%; text-align:center; }
 .slider-slides .slide-center .slide-image { float:none; margin:0 20%; width:60%; }
 /* Prev/Next
-.slider-prev, 
+.slider-prev,
 .slider-next { -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; opacity:0; }
-.slider:hover .slider-prev, 
+.slider:hover .slider-prev,
 .slider:hover .slider-next { opacity:1; }
-.slider-prev, 
+.slider-prev,
 .slider-next { position:absolute; width:70px; height:70px; font-size:30px; line-height:70px; margin-top:-35px; top:50%; border:5px solid #eee; border:5px solid rgba(0,0,0,0.1); text-align:center; color:rgba(0,0,0,0.1); z-index:999; border-radius:50%; cursor:pointer; }
 .slider-prev { left:20px; }
 .slider-prev:before { font-family:'fontawesome'; content:'\f053'; }
 .slider-next { right:20px; }
 .slider-next:before { font-family:'fontawesome'; content:'\f054'; }
 /* Prev/Next */
-.slider-pager { display:none; } 
-.slider-prev, 
+.slider-pager { display:none; }
+.slider-prev,
 .slider-next { -moz-transition:0.2s all; -webkit-transition:0.2s all; transition:0.2s all; opacity:0.3; }
-.slider:hover .slider-prev, 
+.slider:hover .slider-prev,
 .slider:hover .slider-next { opacity:1; }
-.slider-prev, 
+.slider-prev,
 .slider-next { position:absolute; width:60px; height:100px; font-size:30px; line-height:60px; height:60px; margin-top:-30px; top:50%; left:2%; border:3px solid rgba(100,100,100,0.3); text-align:center; color:#fff; z-index:999; border-radius:500px; cursor:pointer; }
 .slider-next { right:2%; left:auto; }
 .slider-prev:before,
@@ -127,7 +127,7 @@ LAYOUT
 .slider-next:before { margin-top:-2px; }
 .slider-prev:after,
 .slider-next:after { -moz-transform:rotate(45deg); -webkit-transform:rotate(45deg); transform:rotate(45deg); }
-.slider-next:before, 
+.slider-next:before,
 .slider-next:after { left:auto; right:35%; -moz-transform-origin:right; -webkit-transform-origin:right; transform-origin:right; }
 /* Transitions */
 .slider-slides .slide-body .slide-caption { -moz-transform:translateY(20px); -webkit-transform:translateY(20px); transform:translateY(20px); opacity:0; -moz-transition:1s all; -webkit-transition:1s all; transition:1s all; }
@@ -221,12 +221,12 @@ NAVIGATION
 /* Menu Elements */
 .menu-main li a { padding:10px; font-size:1.1em; text-transform:uppercase; color:#77777f; font-weight:bold; }
 .menu-main li a .menu-description { }
-.menu-main li:hover > a, 
+.menu-main li:hover > a,
 .menu-main li a:hover { }
 /* Current item highlight both normally and on hover */
-.menu-main .current-menu-ancestor > a, 
+.menu-main .current-menu-ancestor > a,
 .menu-main .current-menu-item > a { }
-.menu-main .current_page_ancestor > a:hover, 
+.menu-main .current_page_ancestor > a:hover,
 .menu-main .current-menu-item > a { color:#9fc748; }
 /* Children Elements */
 .menu-main  ul, .menu-main  li, .menu-main  a { -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; }
@@ -282,7 +282,7 @@ NAVIGATION
 
 
 /* NUMBERED PAGINATION */
-.pagination span, 
+.pagination span,
 .pagination a { border-radius:4px; padding:15px; font-weight:bold; border:none; }
 
 
@@ -396,7 +396,7 @@ COMMENTS
 .comment .comment-options a { margin-left:10px; }
 .comment .comment-options a:first-child { margin:0; }
 /* Contents Styling for Comment Body */
-.comment .comment-content ul, 
+.comment .comment-content ul,
 .comment .comment-content ol { margin-bottom:18px; }
 .comment .comment-content p:last-child { margin-bottom:6px; }
 .comment .comment-content blockquote p:last-child { margin-bottom:24px; }
@@ -441,18 +441,18 @@ RESPONSIVE STYLES
 
 /* TABLET PORTRAIT */
 @media screen and (max-width: 800px){
-    
+
 	.header .logo { float:left; }
-	
+
 	.slider-slides .slide .slide-caption { float:none; width:auto; }
 	.slider-slides .slide .slide-image { display:none; }
-	
+
 	.features-heading { float:none; width:auto; margin:0 0 30px; }
 	.features-content { }
-	
+
 	.testimonial-list .testimonial-content { margin-left:0; }
 	.testimonial-list .testimonial-author { float:none; width:auto; }
-	
+
 	.pagetitle .pagetitle-title { float:none; font-size:2em; }
 	.breadcrumb { float:none; }
 }
@@ -460,22 +460,22 @@ RESPONSIVE STYLES
 
 /* SMARTPHONE */
 @media only screen and (max-width: 600px){
-	
+
 	.topmenu { display:none; }
-	
+
 	.social { float:left; }
-	
+
 	.slider-slides .slide .slide-title { font-size:2em; }
 	.slider-slides .slide .slide-caption { margin:0 10px; }
-	
+
 	/* NAVIGATION */
 	.menu-top { text-align:center;  }
 	.menu-top li { display:inline-block; }
 	.menu-top li a { margin:0 auto; }
-	
+
 	.footermenu { float:none; }
 	.menu-footer li a { margin:0 10px 10px 0; }
-	
+
 	/* POSTS */
 	.post .post-image { float:none; width:auto; margin:0 0 10px; }
 	.post .post-body { margin-left:0; }
