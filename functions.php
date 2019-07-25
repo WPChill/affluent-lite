@@ -1,7 +1,7 @@
 <?php if(!isset($content_width)) $content_width = 640;
 define('CPOTHEME_ID', 'affluent');
 define('CPOTHEME_NAME', 'Affluent');
-define('CPOTHEME_VERSION', '1.0.8');
+define('CPOTHEME_VERSION', '1.0.9');
 //Other constants
 define('CPOTHEME_LOGO_WIDTH', '175');
 define('CPOTHEME_USE_SLIDES', true);
