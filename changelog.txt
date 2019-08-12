@@ -1,3 +1,6 @@
+Version 1.1.0
+Improved accesibility with keyboard navigation
+
 Version 1.0.9
 Minor Backend Tweaks
 Added Compatibility with Kaliforms
