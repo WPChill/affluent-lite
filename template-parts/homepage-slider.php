@@ -22,11 +22,11 @@
 		</div>
 		<?php endforeach; ?>
 	</div>
-	<?php if(sizeof($query->posts) > 1): ?>
-	<?php wp_enqueue_script('cpotheme_cycle'); ?>
-	<?php wp_enqueue_style('cpotheme-fontawesome'); ?>
-	<div class="slider-prev" data-cycle-cmd="pause"></div>
-	<div class="slider-next" data-cycle-cmd="pause"></div>
+	<?php if(count($query->posts) > 1): ?>
+		<?php wp_enqueue_script('cpotheme_cycle'); ?>
+		<?php wp_enqueue_style('cpotheme-fontawesome'); ?>
+		<button class="slider-prev" data-cycle-cmd="pause"></button>
+		<button class="slider-next" data-cycle-cmd="pause"></button>
 	<?php endif; ?>
-</div> 			
-<?php endif; wp_reset_postdata(); ?>			
+</div>
+<?php endif; wp_reset_postdata(); ?>
