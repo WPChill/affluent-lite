@@ -44,8 +44,8 @@ class CPO_Theme {
 			),
 			array(
 				'id'          => 'affluent-req-ac-install-kali-forms',
-				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Kaliforms', 'affluent' ), __( 'Activate: Kaliforms', 'affluent' ), 'kali-forms' ),
-				'description' => __( 'It is highly recommended that you install the Kaliforms plugin.', 'affluent' ),
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Kali Forms', 'affluent' ), __( 'Activate: Kali Forms', 'affluent' ), 'kali-forms' ),
+				'description' => __( 'It is highly recommended that you install the Kali Forms plugin.', 'affluent' ),
 				'check'       => CPOTheme_Notify_System::has_plugin( 'kali-forms' ),
 				'plugin_slug' => 'kali-forms',
 			),
