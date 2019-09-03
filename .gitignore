@@ -6,7 +6,5 @@ affluent.zip
 .jshintignore
 .jshintrc
 .travis.yml
-Gruntfile.js
-package.json
 phpcs.ruleset.xml
 package-lock.json
