@@ -193,9 +193,9 @@ class Epsilon_Welcome_Screen {
 			);
 		}
 
-		if(!current_user_can('administrator')){
-			wp_die(
-				wp_json_encode(
+		if ( ! current_user_can( 'manage_options' ) ) {
+		    wp_die(
+				json_encode(
 					array(
 						'status' => false,
 						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
