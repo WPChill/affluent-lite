@@ -157,12 +157,6 @@ class Epsilon_Welcome_Screen {
 				'welcome_screen_ajax_callback',
 			)
 		);
-		add_action(
-			'wp_ajax_nopriv_welcome_screen_ajax_callback', array(
-				$this,
-				'welcome_screen_ajax_callback',
-			)
-		);
 
 		if ( $this->edd ) {
 			/**
@@ -187,7 +181,19 @@ class Epsilon_Welcome_Screen {
 	 * AJAX Handler
 	 */
 	public function welcome_screen_ajax_callback() {
-		if ( isset( $_POST['args'], $_POST['args']['nonce'] ) && ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
+
+		if ( !isset( $_POST['args'], $_POST['args']['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['args']['nonce'] ), 'welcome_nonce' ) ) {
+			wp_die(
+				wp_json_encode(
+					array(
+						'status' => false,
+						'error'  => esc_html__( 'Not allowed', 'epsilon-framework' ),
+					)
+				)
+			);
+		}
+
+		if(!current_user_can('administrator')){
 			wp_die(
 				wp_json_encode(
 					array(
