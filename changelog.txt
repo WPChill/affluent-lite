@@ -1,5 +1,6 @@
 Version 1.1.2
 Fixed comment display
+Fixed security issues ( wp_nonce check, nopriv AJAX removed and check if user can manage options  )
 
 Version 1.1.0
 Improved accesibility with keyboard navigation
